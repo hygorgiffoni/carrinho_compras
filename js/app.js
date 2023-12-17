@@ -8,6 +8,11 @@ function adicionar() {
     let nomeProduto = produto.split('-')[0];
     let valorProduto = produto.split('R$')[1];
     let quantidade = document.getElementById('quantidade').value;
+    // verifica se a quantidade inserida é válida
+    if (isNaN(quantidade) || quantidade <= 0) {
+        alert("Insira uma quantidade válida.");
+        return;
+    }
     // calcular o preço e o subtotal do produto
     let subtotal = quantidade * valorProduto;
     // adicionar no carrinho
